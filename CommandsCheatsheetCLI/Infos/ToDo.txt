@@ -1,0 +1,6 @@
+- Add the possibility to add a new command with the CLI
+-> Globally availlable if possible
+
+- Improve the Program.cs and co
+
+- Fill in some infos for the readme.md

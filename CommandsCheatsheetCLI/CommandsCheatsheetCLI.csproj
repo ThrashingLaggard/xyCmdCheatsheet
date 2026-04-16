@@ -32,5 +32,8 @@
 	    <PackagePath>\</PackagePath>
 	  </None>
 	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Infos\" />
+	</ItemGroup>
 
 </Project>
