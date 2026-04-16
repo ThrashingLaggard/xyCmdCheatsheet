@@ -1,9 +1,13 @@
 ﻿namespace xyCmdCheatSheet;
 
+
+/// <summary>
+/// Contains the standard commands and optionally custom commands that can be added by the user.
+/// </summary>
 internal static class Commands
 {
-    public static string? Description { get; set; } = null;
-    public static Dictionary<string, List<CommandEntry>>? CustomCommands { get; set; } = null;
+    public static string? Description { get; set; } = "Your ad here!!!";
+    public static Dictionary<string, List<CommandEntry>>? CustomCommands { get; internal set; } = null;
 
     public static readonly Dictionary<string, List<CommandEntry>> StandardCommands =new(StringComparer.OrdinalIgnoreCase)
         {
