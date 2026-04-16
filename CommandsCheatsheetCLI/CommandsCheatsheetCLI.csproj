@@ -12,7 +12,7 @@
 	<PackAsTool>true</PackAsTool>
 	<ToolCommandName>cmd</ToolCommandName>
 	<PackageId>xyCmdCheatSheet</PackageId>
-	<PackageVersion>1.0.0</PackageVersion>
+	<PackageVersion>1.0.1</PackageVersion>
 	<Authors>ThrashingLaggard</Authors>
 	<License>MIT</License>
 	<Description>CLI-Tool to show (custom WIP) commands in the cli.
