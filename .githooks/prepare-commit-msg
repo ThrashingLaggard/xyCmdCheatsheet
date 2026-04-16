@@ -1,0 +1,24 @@
+#!/bin/sh
+# prepare-commit-msg <msg_file> <source> <sha>
+
+MSG_FILE="$1"
+SOURCE="${2:-}"
+
+# Nur bei Merge-Commits eingreifen
+if [ "$SOURCE" = "merge" ]; then
+  # Vorherigen Commit (vor dem Merge) ermitteln
+  if PREV=$(git rev-parse -q --verify ORIG_HEAD 2>/dev/null); then
+    :
+  else
+    PREV="HEAD@{1}"
+  fi
+
+  # letzte Commit-Message (mehrzeilig) holen
+  PREV_MSG="$(git log -1 --pretty=%B "$PREV")"
+
+  # Nur überschreiben, wenn nicht komplett leer (nach Whitespace-Strip)
+  if [ -n "$(printf "%s" "$PREV_MSG" | tr -d '[:space:]')" ]; then
+    # trailing newline hinzufügen, Git erwartet eine Zeile mit \n
+    printf "%s\n" "$PREV_MSG" > "$MSG_FILE"
+  fi
+fi

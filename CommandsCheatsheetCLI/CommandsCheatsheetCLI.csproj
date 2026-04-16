@@ -5,7 +5,6 @@
     <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<PublishAot>true</PublishAot>
   </PropertyGroup>
 
 	<!-- dotnet tool packaging -->
@@ -16,15 +15,22 @@
 	<Version>1.0.0</Version>
 	<Authors>ThrashingLaggard</Authors>
 	<License>MIT</License>
-	<Description>
-
-		CLI-Tool to show (cli)/custom commands in the cli.
-
-		usage:
-		cmd
-		cmd [git/dotnet/...] to show commands of a specific category
-		cmd --list to show only the categories
+	<Description>CLI-Tool to show (custom WIP) commands in the cli.
+  usage:
+                 cmd   -   all commands
+	cmd [git/dotnet/...]	-   show commands of a specific category
+	cmd --list   -   show only the categories
 	</Description>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
+	<ItemGroup>
+	  <None Include="..\README.md">
+	    <Pack>True</Pack>
+	    <PackagePath>\</PackagePath>
+	  </None>
+	</ItemGroup>
 
 </Project>
