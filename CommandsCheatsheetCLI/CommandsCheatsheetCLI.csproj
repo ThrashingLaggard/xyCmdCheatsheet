@@ -10,11 +10,10 @@
 	<!-- dotnet tool packaging -->
 	<PropertyGroup>
 	<PackAsTool>true</PackAsTool>
-	<ToolCommandName>cmd</ToolCommandName>
+	<ToolCommandName>xycmd</ToolCommandName>
 	<PackageId>xyCmdCheatSheet</PackageId>
 	<PackageVersion>1.0.0</PackageVersion>
 	<Authors>ThrashingLaggard</Authors>
-	<License>MIT</License>
 	<Description>CLI-Tool to show (custom WIP) commands in the cli.
   usage:
                  cmd   -   all commands
