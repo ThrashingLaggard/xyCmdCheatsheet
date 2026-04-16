@@ -38,6 +38,5 @@ internal class Program
                 Renderer.ShowFiltered(args[0]);
                 break;
         }
-        Console.ReadKey();
     }
 }
