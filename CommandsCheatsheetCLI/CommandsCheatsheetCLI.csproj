@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+	<PublishAot>true</PublishAot>
+  </PropertyGroup>
+
+	<!-- dotnet tool packaging -->
+	<PropertyGroup>
+	<PackAsTool>true</PackAsTool>
+	<ToolCommandName>cmd</ToolCommandName>
+	<PackageId>xyCmdCheatSheet</PackageId>
+	<Version>1.0.0</Version>
+	<Authors>ThrashingLaggard</Authors>
+	<License>MIT</License>
+	<Description>
+
+		CLI-Tool to show (cli)/custom commands in the cli.
+
+		usage:
+		cmd
+		cmd [git/dotnet/...] to show commands of a specific category
+		cmd --list to show only the categories
+	</Description>
+	</PropertyGroup>
+
+</Project>
