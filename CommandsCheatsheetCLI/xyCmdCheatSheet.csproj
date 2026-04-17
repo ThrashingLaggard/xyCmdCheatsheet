@@ -34,5 +34,8 @@
 	<ItemGroup>
 	  <Folder Include="Infos\" />
 	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="xyToolz" Version="1.2.1" />
+	</ItemGroup>
 
 </Project>
