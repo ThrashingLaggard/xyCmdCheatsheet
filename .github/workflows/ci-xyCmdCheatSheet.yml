@@ -194,7 +194,7 @@ jobs:
       # ----------------------------------------------------------------------------
       - name: B.4) Restore dependencies
         id: restore
-        run: dotnet restore CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj
+        run: dotnet restore CommandsCheatsheetCLI/xyCmdCheatSheet.csproj
 
       
       # ----------------------------------------------------------------------------
@@ -210,7 +210,7 @@ jobs:
         shell: bash
         run: |
           # Read current version from .csproj
-          current_version=$(grep -oPm1 "(?<=<PackageVersion>)[^<]+" CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj)
+          current_version=$(grep -oPm1 "(?<=<PackageVersion>)[^<]+" CommandsCheatsheetCLI/xyCmdCheatSheet.csproj)
           echo "Current version: $current_version"
 
           # Parse current version into components (major.minor.patch)
@@ -284,7 +284,7 @@ jobs:
       # ----------------------------------------------------------------------------
       - name: B.6) Build (Release)
         id: build
-        run: dotnet build CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj --configuration Release --no-restore
+        run: dotnet build CommandsCheatsheetCLI/xyCmdCheatSheet.csproj --configuration Release --no-restore
 
       # ----------------------------------------------------------------------------
       # B.7) TEST
@@ -292,7 +292,7 @@ jobs:
       # ----------------------------------------------------------------------------
       - name: B.7) Test
         id: test
-        run: dotnet test CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj --no-build --verbosity detailed # quiet|minimal|normal|detailed|diagnostic
+        run: dotnet test CommandsCheatsheetCLI/xyCmdCheatSheet.csproj --no-build --verbosity detailed # quiet|minimal|normal|detailed|diagnostic
 
       # ----------------------------------------------------------------------------
       # B.8) PACK
@@ -302,7 +302,7 @@ jobs:
       # ----------------------------------------------------------------------------
       - name: B.8) Pack (.nupkg to ./out)
         id: pack
-        run: dotnet pack CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj --configuration Release --no-build -o out -p:PackageVersion=${{ env.version }}
+        run: dotnet pack CommandsCheatsheetCLI/xyCmdCheatSheet.csproj --configuration Release --no-build -o out -p:PackageVersion=${{ env.version }}
 
 
 
@@ -366,11 +366,11 @@ jobs:
              && (steps.check_version.outputs.skip_publish == 'true' || steps.publish.outcome == 'success') }}
         shell: bash
         run: |
-          sed -i "s/<PackageVersion>.*<\/PackageVersion>/<PackageVersion>${{ env.version }}<\/PackageVersion>/"  CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj 
+          sed -i "s/<PackageVersion>.*<\/PackageVersion>/<PackageVersion>${{ env.version }}<\/PackageVersion>/"  CommandsCheatsheetCLI/xyCmdCheatSheet.csproj
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git pull --ff-only origin master
-          git add  CommandsCheatsheetCLI/CommandsCheatsheetCLI.csproj 
+          git add  CommandsCheatsheetCLI/xyCmdCheatSheet.csproj
           git commit -m "chore: bump version to ${{ env.version }}"
           git push origin master
 
