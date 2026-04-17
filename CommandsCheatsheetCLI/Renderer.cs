@@ -1,7 +1,10 @@
-﻿namespace xyCmdCheatSheet;
+﻿using static xyCmdCheatSheet.Commands;
+
+namespace xyCmdCheatSheet;
 
 internal static class Renderer
 {
+
     public static void ShowAll()
     {
         foreach (var (key, entries) in AllEntries())
@@ -39,12 +42,27 @@ internal static class Renderer
 
     private static IEnumerable<KeyValuePair<string, List<CommandEntry>>> AllEntries()
     {
+        // Standard-Einträge zuerst, ggf. mit custom-Einträgen derselben Kategorie zusammenführen
         foreach (var kv in Commands.StandardCommands)
-            yield return kv;
+        {
+            if (Commands.CustomCommands is not null &&
+                Commands.CustomCommands.TryGetValue(kv.Key, out var customList))
+            {
+                // Merge: Standard + Custom in einer Liste
+                yield return new KeyValuePair<string, List<CommandEntry>>(
+                    kv.Key, [.. kv.Value, .. customList]);
+            }
+            else
+            {
+                yield return kv;
+            }
+        }
 
+        // Kategorien, die nur in Custom existieren, separat ausgeben
         if (Commands.CustomCommands is not null)
             foreach (var kv in Commands.CustomCommands)
-                yield return kv;
+                if (!Commands.StandardCommands.ContainsKey(kv.Key))
+                    yield return kv;
     }
 
     private static void ShowCategory(string category, List<CommandEntry> entries)
