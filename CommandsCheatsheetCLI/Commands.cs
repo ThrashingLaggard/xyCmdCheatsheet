@@ -6,7 +6,10 @@
 /// </summary>
 internal static class Commands
 {
+    internal record CommandEntry(string Title, string Code);
+
     public static string? Description { get; set; } = "Your ad here!!!";
+
     public static Dictionary<string, List<CommandEntry>>? CustomCommands { get; internal set; } = null;
 
     public static readonly Dictionary<string, List<CommandEntry>> StandardCommands =new(StringComparer.OrdinalIgnoreCase)
