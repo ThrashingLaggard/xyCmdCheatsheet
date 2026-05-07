@@ -1,41 +1,42 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <OutputType>Exe</OutputType>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
 	<!-- dotnet tool packaging -->
 	<PropertyGroup>
-	<PackAsTool>true</PackAsTool>
-	<ToolCommandName>xycmd</ToolCommandName>
-	<PackageId>xyCmdCheatSheet</PackageId>
-	<PackageVersion>1.0.1</PackageVersion>
-	<Authors>ThrashingLaggard</Authors>
-	<Description>CLI-Tool to show (custom WIP) commands in the cli.
-  usage:
-                 cmd   -   all commands
-	cmd [git/dotnet/...]	-   show commands of a specific category
-	cmd --list   -   show only the categories
-	</Description>
-	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-	<PackageLicenseExpression>MIT</PackageLicenseExpression>
-	<GenerateDocumentationFile>True</GenerateDocumentationFile>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackAsTool>true</PackAsTool>
+		<ToolCommandName>xycmd</ToolCommandName>
+		<PackageId>xyCmdCheatSheet</PackageId>
+		<PackageVersion>1.0.1</PackageVersion>
+		<Authors>ThrashingLaggard</Authors>
+		<Description>
+			CLI-Tool to show (custom WIP) commands in the cli.
+			usage:
+			cmd   -   all commands
+			cmd [git/dotnet/...]	-   show commands of a specific category
+			cmd --list   -   show only the categories
+		</Description>
+		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 	<ItemGroup>
-	  <None Include="..\README.md">
-	    <Pack>True</Pack>
-	    <PackagePath>\</PackagePath>
-	  </None>
+		<None Include="..\README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
 	</ItemGroup>
 	<ItemGroup>
-	  <Folder Include="Infos\" />
+		<Folder Include="Infos\" />
 	</ItemGroup>
 	<ItemGroup>
-	  <PackageReference Include="xyToolz" Version="1.2.1" />
+		<PackageReference Include="xyToolz" Version="1.2.1" />
 	</ItemGroup>
 
 </Project>

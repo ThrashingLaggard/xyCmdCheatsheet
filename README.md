@@ -1,6 +1,6 @@
 # xyCmdCheatSheet
 
-A lightweight .NET CLI tool (`xycmd`) to look up shell commands by category — with support for your own custom entries.
+A lightweight .NET CLI tool (`xycmd`) to look up shell commands by category, with support for custom entries.
 
 ---
 
@@ -15,18 +15,17 @@ dotnet new tool-manifest
 dotnet tool install --local xyCmdCheatSheet
 ```
 
-Requires **.NET 10** or later.
 
 ---
 
 ## Usage
 
 ```
-xycmd                              Show all commands
-xycmd <filter>                     Filter by category  (e.g. xycmd git, xycmd ef)
-xycmd --list  | -l                 List all categories
-xycmd --add <cat> <title> <code>   Add a custom command
-xycmd --help  | -h                 Show help
+xycmd											Show all commands
+xycmd <filter>								Filter by category  (e.g. xycmd git, xycmd ef)
+xycmd --list  | -l							List all categories
+xycmd --add <cat> <title> <code>    Add a custom command
+xycmd --help  | -h							Show help
 ```
 
 **Examples**
@@ -45,7 +44,7 @@ Multi-word arguments must be quoted!!!
 
 ## Built-in Categories
 
-| Category          | Contains                                  |
+| Category          | Contains (exemplary)                     |
 |-------------------|-------------------------------------------|
 | CLI               | General shell one-liners                  |
 | Directories       | Remove `bin`/`obj` folders                |
