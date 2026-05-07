@@ -15,11 +15,11 @@
 		<PackageVersion>1.0.1</PackageVersion>
 		<Authors>ThrashingLaggard</Authors>
 		<Description>
-			CLI-Tool to show (custom WIP) commands in the cli.
+			CLI-Tool to show (custom) commands in the cli.
 			usage:
-			cmd   -   all commands
-			cmd [git/dotnet/...]	-   show commands of a specific category
-			cmd --list   -   show only the categories
+			cmd								-   all commands
+			cmd [git/dotnet/...]		-   show commands of a specific category
+			cmd --list						-   show only the categories
 		</Description>
 		<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
