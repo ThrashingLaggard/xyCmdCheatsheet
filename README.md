@@ -1,6 +1,6 @@
 # xyCmdCheatSheet
 
-A lightweight .NET CLI tool (`xycmd`) to look up shell commands by category, with support for custom entries.
+A lightweight .NET8 CLI tool to look up shell commands by category, with support for custom entries.
 
 ---
 
@@ -66,6 +66,7 @@ Custom entries are saved as JSON and persist across tool updates:
 
 Custom entries in an existing category are merged with the built-in ones. New categories appear at the bottom.
 
+---
 
 ## License
 
