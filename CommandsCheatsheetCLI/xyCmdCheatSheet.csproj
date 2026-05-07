@@ -12,7 +12,7 @@
 		<PackAsTool>true</PackAsTool>
 		<ToolCommandName>xycmd</ToolCommandName>
 		<PackageId>xyCmdCheatSheet</PackageId>
-		<PackageVersion>1.0.2</PackageVersion>
+		<PackageVersion>1.0.3</PackageVersion>
 		<Authors>ThrashingLaggard</Authors>
 		<Description>
 			CLI-Tool to show (custom) commands in the cli.
